@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Duc Tran Phan's portfolio
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class = "header">
+        <h1>Duc Tran Phan's portfolio website!!</h1>
+            <a href = "mailto:ductranphan@cmail.carleton.ca" target =_blank title = "This takes you to Email">
+            <img class = "contact" src="{{ url_for('static', filename='email.png') }}" width = "80" height ="80">
+            </a>
+        </div>
+    
+        <hr>
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">      
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                        <button class="btn btn-outline-primary" data-bs-toggle="button" onclick="location.href='{{ url_for('home') }}'">Home</button>
+                        </li>
+
+                        <li class="nav-item">
+                        <button class="btn btn-outline-primary" data-bs-toggle="button" onclick="location.href='{{ url_for('projects') }}'">Projects</button>
+                        </li>
+
+                        <li class="nav-item">
+                        <button class="btn btn-outline-primary" data-bs-toggle="button" onclick="location.href='{{ url_for('work') }}'">Resume</button>
+                        </li>
+
+                        <!--
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                        </li>
+                        -->
+                    </ul>
+            </div>
+            </nav>
+        <br>
+
+        <img class = "background" src="{{ url_for('static', filename='background_street.jpg') }}" alt="Background" style = "
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        transform-origin: center center;
+        transition: transform 0.1s ease-out;
+        z-index: -1;">
+
+    <script>
+        const img = document.getElementById('zoomImage');
+        window.addEventListener('scroll', () => {
+         // Get scroll position (0 to max)
+        const scrollTop = window.scrollY || window.pageYOffset;
+        // Calculate scale based on scroll (adjust multiplier and base as needed)
+        // E.g. start scale 1.1, zoom up to 1.5 when scrolled 500px
+        const maxScroll = 500;
+        const scaleStart = 1.1;
+        const scaleMax = 1.5;
+        let scale = scaleStart + (scaleMax - scaleStart) * Math.min(scrollTop / maxScroll, 1);
+
+        img.style.transform = `scale(${scale})`;
+        });
+    </script>
+            
+        
+        <div class="intro">
+    
+            <img class = "myface" src="{{ url_for('static', filename='myface.jpg') }}" alt="Me in a suit">
+
+            <div class="intro2">
+            <h2 style = "font-weight: bold" >Hi, I'm Duc Tran Phan!</h2>
+            <br>
+            <h4>I'm a second-year student studying Honours Bachelor of Computer Science - AI/Machine Learning Stream at Carleton University</h4>
+            <br>
+
+            <div class = "logo">
+            <img  class = "icon" src="{{ url_for('static', filename='location.png') }}" width = "30" height = "30">
+            <h4 style = "color: lightgrey">Toronto, Canada</h4>
+            </div>
+
+            </div>
+        </div>
+        <hr>
+
+        <h3>
+            ABOUT ME
+        </h3>
+        <br>
+        <h5>
+            - I am a self-motivated student with a strong eagerness to learn, frequently engaging in self-study and taking on projects to expand my knowledge and skill set.
+        </h5>
+
+        <br>
+        <h5>
+            - I'm currently working on projects that involve web development and Machine Learning. I have experience with Python, Java, HTML and CSS and I'm always looking to learn new technologies and frameworks. 
+        </h5>
+
+        <br>
+        <h5>
+            - I learn to contribute to open-source projects and engage in LeetCode and coding challenges to sharpen my practical coding and problem-solving skills.While I'm still early in my journey, I'm passionate in mastering machine learning, probability, and statistics courses to build real-world solutions that make an impact in the tech industry.
+        </h5>
+
+        <br>
+        <h5>
+            - Outside of academics, i enjoy going to the gym, playing sports like soccer and basketball. I'm also very passionate about Mixed Martial Arts (MMA) and I'm currently reading the series "A song of Ice and Fire" by George R.R. Martin.
+        </h5>
+
+        <br>
+        <hr>
+
+        <img class = "wallpaper" src="{{ url_for('static', filename='background.jpg') }}" alt="Carleton University">
+
+        <hr>
+
+        <div class = "links"> 
+        <a href = "https://www.linkedin.com/in/duc-tran-phan-8302402b2" target =_blank title = "This takes you to Linkedln">
+            <img class = "linkedln" src="{{ url_for('static', filename='linkedln-logo.png') }}" width = "40" height = "40">
+        </a>
+        <br>
+
+        <a href = "https://github.com/ductranphan" target =_blank title = "This takes you to GitHub">
+            <img class = "github" src="{{ url_for('static', filename='github-logo.png') }}" width = "40" height = "40">
+        </a>
+        <br>
+
+        <a href = "https://www.instagram.com/ductranphan06/" target =_blank title = "This takes you to Instagram">
+            <img class = "insta" src="{{ url_for('static', filename='insta-logo.png') }}" width = "40" height = "40">
+        </a>
+        <br>
+
+        <a href = "https://open.spotify.com/user/uddb1et9csodkizdephyd1dxp?si=6a612f8fb9384b92" target =_blank title = "This takes you to Spotify">
+            <img class = "spotify" src="{{ url_for('static', filename='spotify-logo.png') }}" width = "40" height = "40">
+        </a>    
+        <br>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        </div>
+    </body>
+</html>
